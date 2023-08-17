@@ -141,7 +141,7 @@ public class AVLTree {
       return;
     }
 
-    // i kinda yoinked this display
+    // interesting display I found
     String connector = isTail ? "└── " : "├── ";
     System.out.println(prefix + connector + node.getkey()); // display height
 
