@@ -375,7 +375,7 @@ public class AVLTree {
 
     AVLTree tree = new AVLTree();
 
-    int n = 100;
+    int n = 100000;
     for (int i = 0; i < n; i++) {
       tree.root = tree.insert(tree.root, i);
       tree.insert(tree.root, -i);
@@ -385,8 +385,9 @@ public class AVLTree {
     tree.displayTree();
 
     for (int i = 0; i < n; i++) {
-      tree.contains(tree.root, n - 1);
-      tree.contains(tree.root, -n + 1);
+      // returns boolean, would have to sysout
+      tree.contains(tree.root, i - 1);
+      tree.contains(tree.root, -i + 1);
       System.out.println(i);
     }
 
