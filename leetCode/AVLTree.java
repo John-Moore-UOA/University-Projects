@@ -129,9 +129,9 @@ public class AVLTree {
     }
   }
 
-  // displays heights of tree like the normal display
+  // displays values of tree like the normal display
   public void displayTree() {
-    System.out.println("Displays Heights:  root --> leaf\n");
+    System.out.println("Displays Values:  root --> leaf\n");
     displayVerticalTree(root, "", false);
   }
 
@@ -375,19 +375,37 @@ public class AVLTree {
 
     AVLTree tree = new AVLTree();
 
-    int[] keys = { 3, 2, 1, 6, 1, 2, 4, 2, 7, 6, 1, 2, -1 };
-
-    for (int key : keys) {
-      tree.root = tree.insert(tree.getRoot(), key);
+    int n = 100;
+    for (int i = 0; i < n; i++) {
+      tree.root = tree.insert(tree.root, i);
+      tree.insert(tree.root, -i);
+      System.out.println(i);
     }
-    tree.displayTree(); // displays element keys
-    tree.remove(tree.root, 2);
-    tree.displayTree(); // displays element keys
 
-    System.out.println(tree.contains(tree.root, 6));
-    System.out.println(tree.contains(tree.root, 123));
-    System.out.println(tree.contains(tree.root, 0));
-    System.out.println(tree.contains(tree.root, 2));
+    tree.displayTree();
+
+    for (int i = 0; i < n; i++) {
+      tree.contains(tree.root, n - 1);
+      tree.contains(tree.root, -n + 1);
+      System.out.println(i);
+    }
+
+    System.out.println("DONE");
+    tree.displayTree();
+
+    // int[] keys = { 3, 2, 1, 6, 1, 2, 4, 2, 7, 6, 1, 2, -1 };
+
+    // for (int key : keys) {
+    // tree.root = tree.insert(tree.getRoot(), key);
+    // }
+    // tree.displayTree(); // displays element keys
+    // tree.remove(tree.root, 2);
+    // tree.displayTree(); // displays element keys
+
+    // System.out.println(tree.contains(tree.root, 6));
+    // System.out.println(tree.contains(tree.root, 123));
+    // System.out.println(tree.contains(tree.root, 0));
+    // System.out.println(tree.contains(tree.root, 2));
     // tree.displayTreeHeights(); // displays heights of elements
     // tree.findMin(tree.findNode(15)); // find min element key from this
     // tree.findNextLarger(tree.findNode(15)); // findNode and find next largest
