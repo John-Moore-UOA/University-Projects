@@ -141,7 +141,7 @@ public class AVLTree {
       return;
     }
 
-    // interesting display I found
+    // i kinda yoinked this display
     String connector = isTail ? "└── " : "├── ";
     System.out.println(prefix + connector + node.getkey()); // display height
 
@@ -235,6 +235,7 @@ public class AVLTree {
       return root;
 
     // Perform standard BST delete
+    // kinda nicer than using the findNode function
     if (key < root.key)
       root.left = remove(root.left, key);
     else if (key > root.key)
@@ -356,13 +357,25 @@ public class AVLTree {
     return y;
   }
 
+  public boolean contains(Node root, int key) {
+    if (root == null)
+      return false;
+
+    if (key == root.key)
+      return true;
+    else if (key < root.key)
+      return contains(root.left, key);
+    else
+      return contains(root.right, key);
+  }
+
   public static void main(String[] args) {
 
     System.out.println("AVL tree demo");
 
     AVLTree tree = new AVLTree();
 
-    int[] keys = { 3, 2, 1, 6, 1, 2, 4, 2, 7, 6, 1, 2 };
+    int[] keys = { 3, 2, 1, 6, 1, 2, 4, 2, 7, 6, 1, 2, -1 };
 
     for (int key : keys) {
       tree.root = tree.insert(tree.getRoot(), key);
@@ -371,6 +384,10 @@ public class AVLTree {
     tree.remove(tree.root, 2);
     tree.displayTree(); // displays element keys
 
+    System.out.println(tree.contains(tree.root, 6));
+    System.out.println(tree.contains(tree.root, 123));
+    System.out.println(tree.contains(tree.root, 0));
+    System.out.println(tree.contains(tree.root, 2));
     // tree.displayTreeHeights(); // displays heights of elements
     // tree.findMin(tree.findNode(15)); // find min element key from this
     // tree.findNextLarger(tree.findNode(15)); // findNode and find next largest
