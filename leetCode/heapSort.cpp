@@ -15,6 +15,7 @@ public:
 
   int heapify(vector<int> &vec, int length)
   {
+    // [100, 50, 60, 20, 49, 29, 15]
     //      100
     //   50     60
     // 20 49  29 15
