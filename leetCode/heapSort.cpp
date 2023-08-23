@@ -24,23 +24,34 @@ public:
 
     for (int i = 0; i < length; i++)
     {
-      // loop throug array
+      // loop through array
       int current = i;
 
-      while (current > 0)
+      //   while (current > 0)
+      //   {
+      // //     if child is greater than parent, swap
+      //     if (vec[(current - 1) / 2] < vec[current])
+      //     {
+      //       swap(vec, current, (current - 1) / 2);
+      //       c++;
+      //     }
+
+      //     current = (current - 1) / 2;
+      //   }
+      // }
+
+      for (int i = 0; i < length; i++)
       {
-        // if child is greater than parent, swap
-        if (vec[(current - 1) / 2] < vec[current])
+        int pos = i;
+        while (vec[pos] > vec[pos / 2])
         {
-          swap(vec, current, (current - 1) / 2);
           c++;
+          swap(vec, pos, pos / 2);
         }
-
-        current = (current - 1) / 2;
       }
-    }
 
-    return c;
+      return c;
+    }
   }
 
   int sort(vector<int> &vec, int length)
@@ -69,7 +80,9 @@ public:
     return c;
   }
 
-  void printVec(vector<int> vec)
+public:
+  void
+  printVec(vector<int> vec)
   {
     for (int i = 0; i < vec.size(); i++)
     {
