@@ -27,19 +27,6 @@ public:
       // loop through array
       int current = i;
 
-      //   while (current > 0)
-      //   {
-      // //     if child is greater than parent, swap
-      //     if (vec[(current - 1) / 2] < vec[current])
-      //     {
-      //       swap(vec, current, (current - 1) / 2);
-      //       c++;
-      //     }
-
-      //     current = (current - 1) / 2;
-      //   }
-      // }
-
       for (int i = 0; i < length; i++)
       {
         int pos = i;
