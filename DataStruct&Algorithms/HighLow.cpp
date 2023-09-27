@@ -1,5 +1,29 @@
-
 // 120 ms 160 ms
+
+//Question. Given a sorted array of integers A and a pair of integers (low, high), how many elements x in A
+//satisfy low ≤ x ≤ high?
+//Input. The first line contains an integer n which denotes the length of the array A. The next line contains n
+//integers a0, . . . , an−1, separated by a single space. The third line contains an integer m. Finally, each of the
+//following m lines contains two integers, lowi and highi.
+//Output. The output consists of m lines, with the i-th line consisting of a single number denoting the number
+//of elements x in A such that lowi ≤ x ≤ highi.
+//2
+//Example.
+//Input:
+//10
+//1 5 5 5 6 10 25 25 101 101
+//5
+//1 5
+//0 7
+//25 101
+//8 12
+//200 500
+//Output:
+//4
+//5
+//4
+//1
+//0
 
 #include <iostream>
 
