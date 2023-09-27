@@ -52,7 +52,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Maze5 {
+public class Maze {
 
   public class UnionFind {
     //
@@ -161,8 +161,8 @@ public class Maze5 {
     int n = scanner.nextInt(); // dimension
     int m = scanner.nextInt(); // number of pairs
 
-    Maze5 maze = new Maze5();
-    Maze5.UnionFind uf = maze.new UnionFind(n);
+    Maze maze = new Maze();
+    Maze.UnionFind uf = maze.new UnionFind(n);
 
     int input_A, input_B;
 
