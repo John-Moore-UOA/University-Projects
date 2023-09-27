@@ -1,3 +1,30 @@
+//Question. Given a sorted array of distinct integers A and an integer k, what is the largest value d for which
+//there exist k elements x1 < x2 < . . . < xk in A, such that xi − xj ≥ d for every 1 ≤ j < i ≤ k?
+//Input. The first line contains an integer t, which denotes the number of test cases. Each test case is described
+//as follows: The first line of the test case contains two integers, n and k; the second line contains n integers
+//which denote the array A.
+//Output. The output consists of t lines, with the i-th line consisting of a single number denoting the value d
+//corresponding to the i-th test case.
+//Example.
+//Input:
+//4
+//5 2
+//1 2 3 4 5
+//5 3
+//1 2 4 9 10
+//8 4
+//1 10 20 30 70 110 1000 1001
+//10 5
+//1 2 3 4 5 6 7 8 9 10
+//Output:
+//4
+//3
+//40
+//2
+//Explanation. In the first test case we can take 1 and 5. In the second test case, one possible solution is to
+//take 1, 4, 10. In the third 1, 70, 110, 1001. Finally, in the fourth test case we take 1, 3, 5, 7, 9.
+
+
 #include <iostream>
 
 bool isPossible(int nums[], int d, int k, int length)
